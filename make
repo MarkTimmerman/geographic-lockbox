@@ -1,1 +1,1 @@
-g++ -o app app.cpp GeographicLockbox.cpp
+g++ -o app app.cpp Coordinates.cpp GeographicLockbox.cpp
