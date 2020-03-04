@@ -1,7 +1,7 @@
 #ifndef GEOGRAPHIC_LOCKBOX_H
 #define GEOGRAPHIC_LOCKBOX_H
 
-#include "Zone.h"
+#include "../Zone/Zone.h"
 #include <vector>
 
 using namespace std;

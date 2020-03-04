@@ -1,7 +1,7 @@
 #ifndef ZONE_H
 #define ZONE_H
 
-#include "Coordinates.h"
+#include "../Coordinates/Coordinates.h"
 
 class Zone {
     public:

@@ -1,1 +1,1 @@
-g++ -std=c++11 -o app app.cpp Coordinates.cpp Zone.cpp GeographicLockbox.cpp
+g++ -std=c++11 -Wall -o app src/app.cpp src/Coordinates/Coordinates.cpp src/Zone/Zone.cpp src/GeographicLockbox/GeographicLockbox.cpp

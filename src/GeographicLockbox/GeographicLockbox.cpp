@@ -1,5 +1,5 @@
 #include "GeographicLockbox.h"
-#include "Coordinates.h"
+#include "../Coordinates/Coordinates.h"
 
 GeographicLockbox::GeographicLockbox (vector<Zone> initialZones) {
     zones = initialZones;

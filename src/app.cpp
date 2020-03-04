@@ -3,8 +3,8 @@
 #include <iomanip>
 using namespace std;
 
-#include "GeographicLockbox.h"
-#include "Zone.h"
+#include "GeographicLockbox/GeographicLockbox.h"
+#include "Zone/Zone.h"
 
 int main(int argc, char* argv[]) {
     vector<Zone> zones {
