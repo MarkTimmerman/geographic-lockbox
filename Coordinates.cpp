@@ -1,17 +1,10 @@
 #include "Coordinates.h"
 
-void Coordinates::set_latitude(double newLatitude) {
-    latitude = newLatitude;
+Coordinates::Coordinates() {
 }
 
-void Coordinates::set_longitude(double newLongitude) {
-    longitude = newLongitude;
+Coordinates::Coordinates(double initialLatitude, double initialLongitude) {
+    latitude = initialLatitude;
+    longitude = initialLongitude;
 }
 
-double Coordinates::get_latitude() {
-    return latitude;
-}
-
-double Coordinates::get_longitude() {
-    return longitude;
-}
