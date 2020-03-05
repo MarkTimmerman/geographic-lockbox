@@ -11,9 +11,9 @@ class Zone {
         Coordinates coordinates;
         double radius;
         bool has_been_visited;
-        bool is_being_located;
 
-        double get_distance_in_miles_from_coordinates(Coordinates);
+        void visit();
+        bool are_coordinates_inside(Coordinates);
 };
 
 #endif
