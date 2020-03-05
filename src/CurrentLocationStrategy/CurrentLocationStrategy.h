@@ -5,7 +5,7 @@
 
 class CurrentLocationStrategy {
     public:
-        Coordinates get();
+        virtual Coordinates get();
 };
 
 #endif

@@ -9,5 +9,6 @@ class NotImplementedError: public exception {
 } notImplementedError;
 
 Coordinates CurrentLocationStrategy::get() {
-    throw notImplementedError;
+    return Coordinates();
+    // throw notImplementedError;
 }
