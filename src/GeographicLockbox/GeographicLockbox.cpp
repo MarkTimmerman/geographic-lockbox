@@ -38,9 +38,17 @@ bool GeographicLockbox::is_current_location_inside_zone_being_located() {
 }
 
 bool GeographicLockbox::have_visited_all_zones() {
-    return false;
+    int numberOfZonesVisited = get_number_of_zones_visited();
+    int numberOfZones = zones.size();
+    return numberOfZonesVisited == numberOfZones;
 }
 
 int GeographicLockbox::get_number_of_zones_visited() {
-    return 0;
+    int numberOfZonesVisited = 0;
+    for (Zone zone : zones) {
+        if (zone.has_been_visited) {
+            numberOfZonesVisited++;
+        }
+    }
+    return numberOfZonesVisited;
 }

@@ -3,7 +3,9 @@
 #include <iomanip>
 using namespace std;
 
+#include "Coordinates/Coordinates.h"
 #include "GeographicLockbox/GeographicLockbox.h"
+#include "CurrentLocationStrategy/MockCurrentLocationStrategy.h"
 #include "Zone/Zone.h"
 
 int main(int argc, char* argv[]) {
@@ -14,7 +16,9 @@ int main(int argc, char* argv[]) {
         Zone(42.352732, -71.110063, 0.004)
     };
 
-    GeographicLockbox lockbox = GeographicLockbox();
+    Coordinates currentLocation = Coordinates(42.359285, -71.068276);
+    CurrentLocationStrategy* currentLocationStrategy = new MockCurrentLocationStrategy(currentLocation);
+    GeographicLockbox lockbox = GeographicLockbox(currentLocationStrategy);
     lockbox.set_zones(zones);
     lockbox.update_state();
 

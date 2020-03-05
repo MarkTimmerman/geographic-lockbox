@@ -31,14 +31,66 @@ TEST_CASE("returns false if current location is outside zone being located", "[G
 }
 
 TEST_CASE("returns true if all zones have been visited", "[GeographicLockbox]") {
-    REQUIRE(true == true);
+    Coordinates coordinates = Coordinates(42.359285, -71.068276);
+    CurrentLocationStrategy* currentLocationStrategy = new MockCurrentLocationStrategy(coordinates);
+    GeographicLockbox lockbox = GeographicLockbox(currentLocationStrategy);
+    vector<Zone> zones {
+        Zone(42.359285, -71.068276, 0.015),
+        Zone(42.354927, -71.091457, 0.030)
+    };
+    lockbox.set_zones(zones);
+    lockbox.zones[0].visit();
+    lockbox.zones[1].visit();
+
+    double haveAllZonesBeenVisited = lockbox.have_visited_all_zones();
+
+    REQUIRE(haveAllZonesBeenVisited == true);
 }
 
 TEST_CASE("returns false if not all zones have been visited", "[GeographicLockbox]") {
-    REQUIRE(true == true);
+    Coordinates coordinates = Coordinates(42.359285, -71.068276);
+    CurrentLocationStrategy* currentLocationStrategy = new MockCurrentLocationStrategy(coordinates);
+    GeographicLockbox lockbox = GeographicLockbox(currentLocationStrategy);
+    vector<Zone> zones {
+        Zone(42.359285, -71.068276, 0.015),
+        Zone(42.354927, -71.091457, 0.030)
+    };
+    lockbox.set_zones(zones);
+    lockbox.zones[0].visit();
+
+    double haveAllZonesBeenVisited = lockbox.have_visited_all_zones();
+
+    REQUIRE(haveAllZonesBeenVisited == false);
 }
 
-TEST_CASE("returns the number of zones visited", "[GeographicLockbox]") {
-    REQUIRE(true == true);
+TEST_CASE("returns 0 when ono zones have been visited", "[GeographicLockbox]") {
+    Coordinates coordinates = Coordinates(42.359285, -71.068276);
+    CurrentLocationStrategy* currentLocationStrategy = new MockCurrentLocationStrategy(coordinates);
+    GeographicLockbox lockbox = GeographicLockbox(currentLocationStrategy);
+    vector<Zone> zones {
+        Zone(42.359285, -71.068276, 0.015),
+        Zone(42.354927, -71.091457, 0.030)
+    };
+    lockbox.set_zones(zones);
+
+    int numberOfZonesVisited = lockbox.get_number_of_zones_visited();
+
+    REQUIRE(numberOfZonesVisited == 0);
+}
+
+TEST_CASE("returns 1 when one zone has been visited", "[GeographicLockbox]") {
+    Coordinates coordinates = Coordinates(42.359285, -71.068276);
+    CurrentLocationStrategy* currentLocationStrategy = new MockCurrentLocationStrategy(coordinates);
+    GeographicLockbox lockbox = GeographicLockbox(currentLocationStrategy);
+    vector<Zone> zones {
+        Zone(42.359285, -71.068276, 0.015),
+        Zone(42.354927, -71.091457, 0.030)
+    };
+    lockbox.set_zones(zones);
+    lockbox.zones[0].visit();
+
+    int numberOfZonesVisited = lockbox.get_number_of_zones_visited();
+
+    REQUIRE(numberOfZonesVisited == 1);
 }
 
