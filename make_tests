@@ -1,0 +1,3 @@
+g++ -std=c++11 -Wall -o run_tests testing/run_tests.cpp \
+    src/Zone/Zone.cpp src/Zone/Zone.test.cpp \
+    src/Coordinates/Coordinates.cpp src/Coordinates/Coordinates.test.cpp

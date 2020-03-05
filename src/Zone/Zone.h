@@ -6,6 +6,7 @@
 class Zone {
     public:
         Zone();
+        Zone(double, double, double);
 
         Coordinates coordinates;
         double radius;
@@ -13,7 +14,6 @@ class Zone {
         bool is_being_located;
 
         double get_distance_in_miles_from_coordinates(Coordinates);
-        static Zone build_from_latitude_longitude_and_radius(double, double, double);
 };
 
 #endif
