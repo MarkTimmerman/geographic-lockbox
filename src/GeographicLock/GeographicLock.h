@@ -1,5 +1,5 @@
-#ifndef GEOGRAPHIC_LOCKBOX_H
-#define GEOGRAPHIC_LOCKBOX_H
+#ifndef GEOGRAPHIC_LOCK_H
+#define GEOGRAPHIC_LOCK_H
 
 #include "../Zone/Zone.h"
 #include "../CurrentLocationStrategy/CurrentLocationStrategy.h"
@@ -7,9 +7,9 @@
 
 using namespace std;
 
-class GeographicLockbox {
+class GeographicLock {
     public:
-        GeographicLockbox(CurrentLocationStrategy*);
+        GeographicLock(CurrentLocationStrategy*);
 
         CurrentLocationStrategy* currentLocationStrategy;
         vector<Zone> zones;
