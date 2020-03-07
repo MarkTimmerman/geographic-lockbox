@@ -8,8 +8,6 @@ class MockCurrentLocationStrategy : public CurrentLocationStrategy {
     public:
         MockCurrentLocationStrategy(Coordinates);
         Coordinates get();
-
-    private:
         Coordinates coordinates;
 };
 

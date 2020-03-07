@@ -8,8 +8,8 @@ class Coordinates {
 
         double latitude;
         double longitude; 
-
         double get_distance_in_miles_from(Coordinates);
+
     private:
         double degrees_to_radians(double degrees);
 };

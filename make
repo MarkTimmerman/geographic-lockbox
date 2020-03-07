@@ -4,4 +4,5 @@ g++ -std=c++11 -Wall -o app \
     src/Zone/Zone.cpp \
     src/CurrentLocationStrategy/CurrentLocationStrategy.cpp \
     src/CurrentLocationStrategy/MockCurrentLocationStrategy.cpp \
-    src/GeographicLock/GeographicLock.cpp
+    src/GeographicLock/GeographicLock.cpp \
+    src/GeographicLockState/GeographicLockState.cpp

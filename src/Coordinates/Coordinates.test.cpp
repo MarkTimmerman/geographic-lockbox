@@ -34,9 +34,8 @@ TEST_CASE("distance from two different coordinates is correct", "[Coordinates]")
     Coordinates end = Coordinates(42.354927, -71.091457);
 
     double distance = end.get_distance_in_miles_from(start);
-    double distanceRoundedToFourDecimals = round(distance * 10e3) / 10e3;
 
-    REQUIRE(distanceRoundedToFourDecimals == 1.2213);
+    REQUIRE(distance == Approx(1.2213).epsilon(0.01));
 }
 
 

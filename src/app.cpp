@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <iomanip>
 using namespace std;
 
 #include "Coordinates/Coordinates.h"
@@ -17,10 +16,14 @@ int main(int argc, char* argv[]) {
     };
 
     Coordinates currentLocation = Coordinates(42.359285, -71.068276);
-    CurrentLocationStrategy* currentLocationStrategy = new MockCurrentLocationStrategy(currentLocation);
+    MockCurrentLocationStrategy* currentLocationStrategy = new MockCurrentLocationStrategy(currentLocation);
     GeographicLock lock = GeographicLock(currentLocationStrategy);
     lock.set_zones(zones);
-    lock.update_state();
+
+    GeographicLockState state = lock.get_state();
+
+    printf("Distance to Next Zone: %f\n", state.distance_to_zone_being_located);
+    printf("%d of %d Zones Visited\n", state.number_of_zones_visited, state.total_number_of_zones);
 
     return 0;
 }
