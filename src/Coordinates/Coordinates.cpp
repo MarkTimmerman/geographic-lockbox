@@ -7,29 +7,29 @@ Coordinates::Coordinates() {
     longitude = 0.0;
 }
 
-Coordinates::Coordinates(double initialLatitude, double initialLongitude) {
-    latitude = initialLatitude;
-    longitude = initialLongitude;
+Coordinates::Coordinates(double initial_latitude, double initial_longitude) {
+    latitude = initial_latitude;
+    longitude = initial_longitude;
 }
 
-double Coordinates::get_distance_in_miles_from(Coordinates fromCoordinates) {
+double Coordinates::get_distance_in_miles_from(Coordinates from_coordinates) {
     double const EARTH_RADIUS_IN_KILOMETERS = 6371;
     double const MILES_PER_KILOMETER = 0.6213711922373338;
 
-    double latitudeDeltaInRadians = degrees_to_radians(fromCoordinates.latitude - latitude);
-    double longitudeDeltaInRadians = degrees_to_radians(fromCoordinates.longitude - longitude);
+    double latitude_delta_in_radians = degrees_to_radians(from_coordinates.latitude - latitude);
+    double longitude_delta_in_radians = degrees_to_radians(from_coordinates.longitude - longitude);
 
-    double toLatitudeInRadians = degrees_to_radians(latitude);
-    double fromLatitudeInRadians = degrees_to_radians(fromCoordinates.latitude);
+    double to_latitude_in_radians = degrees_to_radians(latitude);
+    double from_latitude_in_radians = degrees_to_radians(from_coordinates.latitude);
 
-    double squareOfHalfChordLength = pow(sin(latitudeDeltaInRadians / 2), 2)
-                                     + pow(sin(longitudeDeltaInRadians / 2), 2)
-                                     * cos(toLatitudeInRadians) * cos(fromLatitudeInRadians);
-    double angularDistanceInRadians = 2 * atan2(sqrt(squareOfHalfChordLength), sqrt(1 - squareOfHalfChordLength));
+    double square_of_half_chord_length = pow(sin(latitude_delta_in_radians / 2), 2)
+                                     + pow(sin(longitude_delta_in_radians / 2), 2)
+                                     * cos(to_latitude_in_radians) * cos(from_latitude_in_radians);
+    double angular_distance_in_radians = 2 * atan2(sqrt(square_of_half_chord_length), sqrt(1 - square_of_half_chord_length));
     
-    double distanceInKilometers = EARTH_RADIUS_IN_KILOMETERS * angularDistanceInRadians;
+    double distance_in_kilometers = EARTH_RADIUS_IN_KILOMETERS * angular_distance_in_radians;
 
-    return distanceInKilometers * MILES_PER_KILOMETER;
+    return distance_in_kilometers * MILES_PER_KILOMETER;
 }
 
 double Coordinates::degrees_to_radians(double degrees) {

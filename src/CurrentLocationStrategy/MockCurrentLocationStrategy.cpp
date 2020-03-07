@@ -1,7 +1,7 @@
 #include "MockCurrentLocationStrategy.h"
 
-MockCurrentLocationStrategy::MockCurrentLocationStrategy(Coordinates initialCoordinates) {
-    coordinates = initialCoordinates;
+MockCurrentLocationStrategy::MockCurrentLocationStrategy(Coordinates initial_coordinates) {
+    coordinates = initial_coordinates;
 }
 
 Coordinates MockCurrentLocationStrategy::get() {
