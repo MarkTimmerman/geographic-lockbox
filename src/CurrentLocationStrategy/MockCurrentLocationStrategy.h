@@ -2,7 +2,12 @@
 #define MOCK_CURRENT_LOCATION_STRATEGY_H
 
 #include "CurrentLocationStrategy.h"
-#include "../Coordinates/Coordinates.h"
+
+#ifdef ARDUINO_ARCH_AVR
+    #include "Coordinates.h"
+#else
+    #include "../Coordinates/Coordinates.h"
+#endif
 
 class MockCurrentLocationStrategy : public CurrentLocationStrategy {
     public:

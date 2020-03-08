@@ -1,0 +1,11 @@
+geographicLockLibraryPath=~/Documents/Arduino/libraries/GeographicLock
+mkdir $geographicLockLibraryPath
+
+cp src/Coordinates/Coordinates.h src/Coordinates/Coordinates.cpp $geographicLockLibraryPath
+cp src/CurrentLocationStrategy/CurrentLocationStrategy.h src/CurrentLocationStrategy/CurrentLocationStrategy.cpp $geographicLockLibraryPath
+cp src/CurrentLocationStrategy/MockCurrentLocationStrategy.h src/CurrentLocationStrategy/MockCurrentLocationStrategy.cpp $geographicLockLibraryPath
+cp src/GeographicLock/GeographicLock.h src/GeographicLock/GeographicLock.cpp $geographicLockLibraryPath
+cp src/GeographicLockState/GeographicLockState.h src/GeographicLockState/GeographicLockState.cpp $geographicLockLibraryPath
+# cp src/PushButton/PushButton.h src/PushButton/PushButton.cpp $geographicLockLibraryPath
+# cp src/PushButtonStrategy/PushButtonStrategy.h src/PushButtonStrategy/PushButtonStrategy.cpp $geographicLockLibraryPath
+cp src/Zone/Zone.h src/Zone/Zone.cpp $geographicLockLibraryPath

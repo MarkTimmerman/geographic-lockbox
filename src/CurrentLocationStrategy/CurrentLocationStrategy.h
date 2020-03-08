@@ -1,7 +1,11 @@
 #ifndef CURRENT_LOCATION_STRATEGY_H
 #define CURRENT_LOCATION_STRATEGY_H
 
-#include "../Coordinates/Coordinates.h"
+#ifdef ARDUINO_ARCH_AVR
+    #include "Coordinates.h"
+#else
+    #include "../Coordinates/Coordinates.h"
+#endif
 
 class CurrentLocationStrategy {
     public:

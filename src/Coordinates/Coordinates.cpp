@@ -1,6 +1,11 @@
 #include "Coordinates.h"
-#include <cmath>
-using namespace std;
+
+#ifdef ARDUINO_ARCH_AVR
+    #include <math.h>
+#else
+    #include <cmath>
+    using namespace std;
+#endif
 
 Coordinates::Coordinates() {
     latitude = 0.0;

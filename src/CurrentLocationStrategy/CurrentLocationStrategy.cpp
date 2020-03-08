@@ -1,7 +1,12 @@
 #include "CurrentLocationStrategy.h"
-#include "../errors/NotImplementedError.h"
+
+#ifdef ARDUINO_ARCH_AVR
+    #include "Coordinates.h"
+#else
+    #include "../Coordinates/Coordinates.h"
+#endif
 
 Coordinates CurrentLocationStrategy::get() {
-    NotImplementedError notImplementedError;
-    throw notImplementedError;
+    Coordinates coordinates = Coordinates();
+    return coordinates;
 }
