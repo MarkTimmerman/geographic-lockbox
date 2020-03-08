@@ -4,5 +4,8 @@ g++ -std=c++11 -Wall -o run_tests testing/run_tests.cpp \
     src/CurrentLocationStrategy/CurrentLocationStrategy.cpp src/CurrentLocationStrategy/CurrentLocationStrategy.test.cpp \
     src/CurrentLocationStrategy/MockCurrentLocationStrategy.cpp src/CurrentLocationStrategy/MockCurrentLocationStrategy.test.cpp \
     src/GeographicLock/GeographicLock.cpp src/GeographicLock/GeographicLock.test.cpp \
-    src/GeographicLockState/GeographicLockState.cpp src/GeographicLockState/GeographicLockState.test.cpp
+    src/GeographicLockState/GeographicLockState.cpp src/GeographicLockState/GeographicLockState.test.cpp \
+    src/PushButtonStrategy/PushButtonStrategy.cpp src/PushButtonStrategy/PushButtonStrategy.test.cpp \
+    src/PushButtonStrategy/MockPushButtonStrategy.cpp src/PushButtonStrategy/MockPushButtonStrategy.test.cpp \
+    src/PushButton/PushButton.cpp src/PushButton/PushButton.test.cpp
 

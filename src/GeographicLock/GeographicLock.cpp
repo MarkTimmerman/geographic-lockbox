@@ -2,15 +2,7 @@
 #include "../GeographicLockState/GeographicLockState.h"
 #include "../Coordinates/Coordinates.h"
 #include "../CurrentLocationStrategy/CurrentLocationStrategy.h"
-
-#include <exception>
-using namespace std;
-
-class NoZonesSetError: public exception {
-    virtual const char* what() const throw() {
-        return "No zones have been set";
-    }
-} noZonesSetError;
+#include "../errors/NoZonesSetError.h"
 
 GeographicLock::GeographicLock(CurrentLocationStrategy* initial_current_location_strategy) {
     current_location_strategy = initial_current_location_strategy;
@@ -62,6 +54,7 @@ GeographicLockState GeographicLock::get_state() {
 
 void GeographicLock::throw_if_no_zones() {
     if (zones.empty()) {
+        NoZonesSetError noZonesSetError;
         throw noZonesSetError;
     }
 }

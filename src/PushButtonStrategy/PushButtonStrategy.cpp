@@ -1,7 +1,7 @@
-#include "CurrentLocationStrategy.h"
+#include "PushButtonStrategy.h"
 #include "../errors/NotImplementedError.h"
 
-Coordinates CurrentLocationStrategy::get() {
+bool PushButtonStrategy::is_pushed() {
     NotImplementedError notImplementedError;
     throw notImplementedError;
 }
