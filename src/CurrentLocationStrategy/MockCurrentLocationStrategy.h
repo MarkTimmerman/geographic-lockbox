@@ -12,8 +12,11 @@
 class MockCurrentLocationStrategy : public CurrentLocationStrategy {
     public:
         MockCurrentLocationStrategy(Coordinates);
+        MockCurrentLocationStrategy(Coordinates, bool);
         Coordinates get();
+        bool can_get_location();
         Coordinates coordinates;
+        bool can_get_location_value;
 };
 
 #endif

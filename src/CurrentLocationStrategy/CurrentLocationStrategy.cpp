@@ -10,3 +10,7 @@ Coordinates CurrentLocationStrategy::get() {
     Coordinates coordinates = Coordinates();
     return coordinates;
 }
+
+bool CurrentLocationStrategy::can_get_location() {
+    return false;
+}

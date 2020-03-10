@@ -10,6 +10,7 @@
 class CurrentLocationStrategy {
     public:
         virtual Coordinates get();
+        virtual bool can_get_location();
 };
 
 #endif
