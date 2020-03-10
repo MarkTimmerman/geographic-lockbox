@@ -65,5 +65,5 @@ TEST_CASE("get_state returns distance to next zone", "[GeographicLock]") {
 
     GeographicLockState state = lock.get_state();
 
-    REQUIRE(state.distance_to_zone_being_located == Approx(1.2213).epsilon(0.01));
+    REQUIRE(state.miles_to_next_zone == Approx(1.2213).epsilon(0.01));
 }

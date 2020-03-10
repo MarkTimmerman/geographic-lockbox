@@ -17,6 +17,7 @@ class GeographicLock {
         void set_zones(Zone*, int);
         GeographicLockState get_state();
 
+    private:
         Zone* zones;
         int number_of_zones;
         Zone* zone_being_located;
@@ -27,7 +28,7 @@ class GeographicLock {
         int get_number_of_zones_visited();
         void throw_if_no_zones();
         GeographicLockState build_current_state();
-        double get_distance_to_zone_being_located();
+        double get_miles_to_next_zone();
         void visit_current_zone_if_current_location_is_inside();
         bool is_current_location_inside_zone_being_located();
 };

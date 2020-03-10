@@ -29,7 +29,7 @@ GeographicLock* build_lock() {
 void get_and_print_state(GeographicLock* lock) {
     GeographicLockState state = lock->get_state();
 
-    printf("Distance to Next Zone: %f\n", state.distance_to_zone_being_located);
+    printf("Distance to Next Zone: %f\n", state.miles_to_next_zone);
     printf("%d of %d Zones Visited\n", state.number_of_zones_visited, state.total_number_of_zones);
 }
 

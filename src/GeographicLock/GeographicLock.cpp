@@ -58,7 +58,7 @@ GeographicLockState GeographicLock::get_state() {
 GeographicLockState GeographicLock::build_current_state() {
     GeographicLockState state;
 
-    state.distance_to_zone_being_located = get_distance_to_zone_being_located();
+    state.miles_to_next_zone = get_miles_to_next_zone();
     state.number_of_zones_visited = get_number_of_zones_visited();
     state.total_number_of_zones = number_of_zones;
     state.have_all_zones_been_visited = have_all_zones_been_visited();
@@ -66,7 +66,7 @@ GeographicLockState GeographicLock::build_current_state() {
     return state;
 }
 
-double GeographicLock::get_distance_to_zone_being_located() {
+double GeographicLock::get_miles_to_next_zone() {
     Coordinates current_location = current_location_strategy->get();
     return zone_being_located->coordinates.get_distance_in_miles_from(current_location);
 }
@@ -79,7 +79,7 @@ void GeographicLock::visit_current_zone_if_current_location_is_inside() {
 }
 
 bool GeographicLock::is_current_location_inside_zone_being_located() {
-    double distance_to_zone_being_located = get_distance_to_zone_being_located();
-    return distance_to_zone_being_located <= zone_being_located->radius;
+    double miles_to_next_zone = get_miles_to_next_zone();
+    return miles_to_next_zone <= zone_being_located->radius;
 }
 
