@@ -3,6 +3,7 @@
 
 class GeographicLockState {
     public:
+        bool has_location;
         double miles_to_next_zone;
         int number_of_zones_visited;
         int total_number_of_zones;

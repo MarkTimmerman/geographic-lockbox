@@ -58,6 +58,7 @@ GeographicLockState GeographicLock::get_state() {
 GeographicLockState GeographicLock::build_current_state() {
     GeographicLockState state;
 
+    state.has_location = current_location_strategy->can_get_location();
     state.miles_to_next_zone = get_miles_to_next_zone();
     state.number_of_zones_visited = get_number_of_zones_visited();
     state.total_number_of_zones = number_of_zones;
