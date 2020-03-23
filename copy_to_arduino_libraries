@@ -11,3 +11,4 @@ cp src/GeographicLockState/GeographicLockState.h src/GeographicLockState/Geograp
 cp src/Zone/Zone.h src/Zone/Zone.cpp $geographicLockLibraryPath
 cp src/CurrentLocationStrategy/UBloxGpsCurrentLocationStrategy.h src/CurrentLocationStrategy/UBloxGpsCurrentLocationStrategy.cpp $geographicLockLibraryPath
 cp src/FourDigitDisplay/FourDigitDisplay.h src/FourDigitDisplay/FourDigitDisplay.cpp $geographicLockLibraryPath
+cp src/Latch/Latch.h src/Latch/Latch.cpp $geographicLockLibraryPath
