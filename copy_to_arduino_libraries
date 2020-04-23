@@ -12,3 +12,5 @@ cp src/Zone/Zone.h src/Zone/Zone.cpp $geographicLockLibraryPath
 cp src/CurrentLocationStrategy/UBloxGpsCurrentLocationStrategy.h src/CurrentLocationStrategy/UBloxGpsCurrentLocationStrategy.cpp $geographicLockLibraryPath
 cp src/FourDigitDisplay/FourDigitDisplay.h src/FourDigitDisplay/FourDigitDisplay.cpp $geographicLockLibraryPath
 cp src/Latch/Latch.h src/Latch/Latch.cpp $geographicLockLibraryPath
+cp src/Menu/Menu.h src/Menu/Menu.cpp $geographicLockLibraryPath
+cp src/MenuOption/MenuOption.h src/MenuOption/MenuOption.cpp $geographicLockLibraryPath
