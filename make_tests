@@ -8,5 +8,6 @@ g++ -std=c++11 -Wall -o run_tests testing/run_tests.cpp \
     src/PushButtonStrategy/PushButtonStrategy.cpp src/PushButtonStrategy/PushButtonStrategy.test.cpp \
     src/PushButtonStrategy/MockPushButtonStrategy.cpp src/PushButtonStrategy/MockPushButtonStrategy.test.cpp \
     src/PushButton/PushButton.cpp src/PushButton/PushButton.test.cpp \
-    src/MenuOption/MenuOption.cpp src/MenuOption/MenuOption.test.cpp
+    src/MenuOption/MenuOption.cpp src/MenuOption/MenuOption.test.cpp \
+    src/Menu/Menu.cpp src/Menu/Menu.test.cpp
 
