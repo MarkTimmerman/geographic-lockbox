@@ -1,7 +1,11 @@
 #ifndef PROGRESS_STORE_H
 #define PROGRESS_STORE_H
 
-#include "../ProgressStoreStrategy/ProgressStoreStrategy.h"
+#ifdef ARDUINO_ARCH_AVR
+    #include "ProgressStoreStrategy.h"
+#else
+    #include "../ProgressStoreStrategy/ProgressStoreStrategy.h"
+#endif
 
 class ProgressStore {
     public:

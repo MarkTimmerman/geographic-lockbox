@@ -3,8 +3,8 @@
 
 class ProgressStoreStrategy {
     public:
-        int get_number_of_zones_visited();
-        void set_number_of_zones_visited(int);
+        virtual int get_number_of_zones_visited();
+        virtual void set_number_of_zones_visited(int);
 };
 
 #endif

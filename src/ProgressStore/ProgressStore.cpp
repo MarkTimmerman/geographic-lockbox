@@ -1,5 +1,11 @@
 #include "ProgressStore.h"
-#include "../ProgressStoreStrategy/ProgressStoreStrategy.h"
+
+#ifdef ARDUINO_ARCH_AVR
+    #include "ProgressStoreStrategy.h"
+#else
+    #include "../ProgressStoreStrategy/ProgressStoreStrategy.h"
+#endif
+
 
 ProgressStore::ProgressStore(ProgressStoreStrategy* initial_strategy) {
     strategy = initial_strategy;
