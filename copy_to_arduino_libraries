@@ -14,3 +14,7 @@ cp src/FourDigitDisplay/FourDigitDisplay.h src/FourDigitDisplay/FourDigitDisplay
 cp src/Latch/Latch.h src/Latch/Latch.cpp $geographicLockLibraryPath
 cp src/Menu/Menu.h src/Menu/Menu.cpp $geographicLockLibraryPath
 cp src/MenuOption/MenuOption.h src/MenuOption/MenuOption.cpp $geographicLockLibraryPath
+cp src/ProgressStoreStrategy/ProgressStoreStrategy.h src/ProgressStoreStrategy/ProgressStoreStrategy.cpp $geographicLockLibraryPath
+cp src/ProgressStoreStrategy/MockProgressStoreStrategy.h src/ProgressStoreStrategy/MockProgressStoreStrategy.cpp $geographicLockLibraryPath
+cp src/ProgressStoreStrategy/EEPromProgressStoreStrategy.h src/ProgressStoreStrategy/EEPromProgressStoreStrategy.cpp $geographicLockLibraryPath
+cp src/ProgressStore/ProgressStore.h src/ProgressStore/ProgressStore.cpp $geographicLockLibraryPath
