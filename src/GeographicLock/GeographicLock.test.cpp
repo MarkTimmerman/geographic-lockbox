@@ -2,6 +2,7 @@
 #include "../../testing/catch.hpp"
 
 #include "../Coordinates/Coordinates.h"
+#include "../Zone/Zone.h"
 #include "../CurrentLocationStrategy/MockCurrentLocationStrategy.h"
 
 TEST_CASE("when no visits get_state returns 0 zones visited and false for all zones visited", "[GeographicLock]") {
@@ -67,3 +68,27 @@ TEST_CASE("get_state returns distance to next zone", "[GeographicLock]") {
 
     REQUIRE(state.miles_to_next_zone == Approx(1.2213).epsilon(0.01));
 }
+
+TEST_CASE("can set the number of zones visited", "[GeographicLock]") {
+    Coordinates coordinates = Coordinates(42.359285, -71.068276);
+    CurrentLocationStrategy* current_location_strategy = new MockCurrentLocationStrategy(coordinates);
+    GeographicLock lock = GeographicLock(current_location_strategy);
+    Zone zones[2] {
+        Zone(42.359285, -71.068276, 0.015),
+        Zone(42.354927, -71.091457, 0.030)
+    };
+    lock.set_zones(zones, 2);
+
+    lock.set_number_of_zones_visited(2);
+    REQUIRE(lock.get_state().number_of_zones_visited == 2);
+
+    lock.set_number_of_zones_visited(1);
+    REQUIRE(lock.get_state().number_of_zones_visited == 1);
+
+    lock.set_number_of_zones_visited(0);
+    REQUIRE(lock.get_state().number_of_zones_visited == 0);
+
+    lock.set_number_of_zones_visited(5);
+    REQUIRE(lock.get_state().number_of_zones_visited == 2);
+}
+

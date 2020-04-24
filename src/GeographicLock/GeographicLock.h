@@ -16,6 +16,7 @@ class GeographicLock {
         GeographicLock(CurrentLocationStrategy*);
         void set_zones(Zone*, int);
         GeographicLockState get_state();
+        void set_number_of_zones_visited(int);
 
     private:
         Zone* zones;

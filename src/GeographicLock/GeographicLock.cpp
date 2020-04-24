@@ -84,3 +84,10 @@ bool GeographicLock::is_current_location_inside_zone_being_located() {
     return miles_to_next_zone <= zone_being_located->radius;
 }
 
+void GeographicLock::set_number_of_zones_visited(int target_number_of_zones_visited) {
+    for (int zone_index=0; zone_index<number_of_zones; zone_index++) {
+        bool has_been_visited = zone_index < target_number_of_zones_visited;
+        zones[zone_index].has_been_visited = has_been_visited;
+    }
+}
+
