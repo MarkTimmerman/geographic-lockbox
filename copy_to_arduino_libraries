@@ -6,8 +6,10 @@ cp src/CurrentLocationStrategy/CurrentLocationStrategy.h src/CurrentLocationStra
 cp src/CurrentLocationStrategy/MockCurrentLocationStrategy.h src/CurrentLocationStrategy/MockCurrentLocationStrategy.cpp $geographicLockLibraryPath
 cp src/GeographicLock/GeographicLock.h src/GeographicLock/GeographicLock.cpp $geographicLockLibraryPath
 cp src/GeographicLockState/GeographicLockState.h src/GeographicLockState/GeographicLockState.cpp $geographicLockLibraryPath
-# cp src/PushButton/PushButton.h src/PushButton/PushButton.cpp $geographicLockLibraryPath
-# cp src/PushButtonStrategy/PushButtonStrategy.h src/PushButtonStrategy/PushButtonStrategy.cpp $geographicLockLibraryPath
+cp src/PushButton/PushButton.h src/PushButton/PushButton.cpp $geographicLockLibraryPath
+cp src/PushButtonStrategy/PushButtonStrategy.h src/PushButtonStrategy/PushButtonStrategy.cpp $geographicLockLibraryPath
+cp src/PushButtonStrategy/MockPushButtonStrategy.h src/PushButtonStrategy/MockPushButtonStrategy.cpp $geographicLockLibraryPath
+cp src/PushButtonStrategy/PhysicalPushButtonStrategy.h src/PushButtonStrategy/PhysicalPushButtonStrategy.cpp $geographicLockLibraryPath
 cp src/Zone/Zone.h src/Zone/Zone.cpp $geographicLockLibraryPath
 cp src/CurrentLocationStrategy/UBloxGpsCurrentLocationStrategy.h src/CurrentLocationStrategy/UBloxGpsCurrentLocationStrategy.cpp $geographicLockLibraryPath
 cp src/FourDigitDisplay/FourDigitDisplay.h src/FourDigitDisplay/FourDigitDisplay.cpp $geographicLockLibraryPath

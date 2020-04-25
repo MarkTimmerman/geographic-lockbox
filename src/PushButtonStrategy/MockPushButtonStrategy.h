@@ -7,7 +7,6 @@ class MockPushButtonStrategy : public PushButtonStrategy {
     public:
         MockPushButtonStrategy(bool);
         bool is_pushed();
-    private:
         bool is_pushed_value;
 };
 
