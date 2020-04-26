@@ -12,5 +12,8 @@ g++ -std=c++11 -Wall -o run_tests testing/run_tests.cpp \
     src/Menu/Menu.cpp src/Menu/Menu.test.cpp \
     src/ProgressStoreStrategy/ProgressStoreStrategy.cpp src/ProgressStoreStrategy/ProgressStoreStrategy.test.cpp \
     src/ProgressStoreStrategy/MockProgressStoreStrategy.cpp src/ProgressStoreStrategy/MockProgressStoreStrategy.test.cpp \
-    src/ProgressStore/ProgressStore.cpp src/ProgressStore/ProgressStore.test.cpp
+    src/ProgressStore/ProgressStore.cpp src/ProgressStore/ProgressStore.test.cpp \
+    src/ProgressIndicatorsStrategy/ProgressIndicatorsStrategy.cpp src/ProgressIndicatorsStrategy/ProgressIndicatorsStrategy.test.cpp \
+    src/ProgressIndicatorsStrategy/MockProgressIndicatorsStrategy.cpp src/ProgressIndicatorsStrategy/MockProgressIndicatorsStrategy.test.cpp \
+    src/ProgressIndicators/ProgressIndicators.cpp src/ProgressIndicators/ProgressIndicators.test.cpp
 
