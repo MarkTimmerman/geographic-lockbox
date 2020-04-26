@@ -5,11 +5,12 @@
 
 class EEPromProgressStoreStrategy : public ProgressStoreStrategy {
     public:
-        EEPromProgressStoreStrategy(int address);
+        EEPromProgressStoreStrategy(int, int);
         int get_number_of_zones_visited();
         void set_number_of_zones_visited(int);
     private:
         int eeprom_address;
+        int number_of_zones;
 };
 
 #endif
