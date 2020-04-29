@@ -89,5 +89,6 @@ void GeographicLock::set_number_of_zones_visited(int target_number_of_zones_visi
         bool has_been_visited = zone_index < target_number_of_zones_visited;
         zones[zone_index].has_been_visited = has_been_visited;
     }
+    update_zone_being_located();
 }
 

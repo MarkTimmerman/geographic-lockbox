@@ -74,8 +74,8 @@ TEST_CASE("can set the number of zones visited", "[GeographicLock]") {
     CurrentLocationStrategy* current_location_strategy = new MockCurrentLocationStrategy(coordinates);
     GeographicLock lock = GeographicLock(current_location_strategy);
     Zone zones[2] {
-        Zone(42.359285, -71.068276, 0.015),
-        Zone(42.354927, -71.091457, 0.030)
+        Zone(45.359285, -71.068276, 0.015),
+        Zone(44.354927, -71.091457, 0.030)
     };
     lock.set_zones(zones, 2);
 
@@ -89,6 +89,23 @@ TEST_CASE("can set the number of zones visited", "[GeographicLock]") {
     REQUIRE(lock.get_state().number_of_zones_visited == 0);
 
     lock.set_number_of_zones_visited(5);
+    REQUIRE(lock.get_state().number_of_zones_visited == 2);
+}
+
+
+TEST_CASE("when the number of zones visited is set, the current zone is correct", "[GeographicLock]") {
+    Coordinates coordinates = Coordinates(42.359285, -71.068276);
+    CurrentLocationStrategy* current_location_strategy = new MockCurrentLocationStrategy(coordinates);
+    GeographicLock lock = GeographicLock(current_location_strategy);
+    Zone zones[3] {
+        Zone(43.354927, -72.091457, 0.001),
+        Zone(42.359285, -71.068276, 0.015),
+        Zone(44.354927, -73.091457, 0.001)
+    };
+
+    lock.set_zones(zones, 3);
+    lock.set_number_of_zones_visited(1);
+
     REQUIRE(lock.get_state().number_of_zones_visited == 2);
 }
 
